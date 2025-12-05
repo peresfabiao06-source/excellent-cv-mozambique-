@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EXCELLENT CV | Guia de Entrevistas & Modelos de CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Cookie consent stylesheet (ensure file is at /public/assets/cookie-consent.css) -->
+    <link rel="stylesheet" href="/public/assets/cookie-consent.css">
+
+    <style>
+        /* Reset e configurações globais */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root{
+            --primary-color: #1a237e;
+            --primary-light: #283593;
+            --secondary-color: #00bcd4;
+            --accent-color: #ff4081;
+            --admin-color: #673ab7;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --error-color: #F44336;
+            --text-color: #212121;
+            --text-light: #757575;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 35px rgba(0,0,0,0.12);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        body{
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        h1,h2,h3,h4,h5{ font-family: 'Poppins', sans-serif; font-weight: 600; line-height: 1.3; }
+
+        .container{ width:100%; max-width:1200px; margin:0 auto; padding: 0 20px; }
+
+        section{ padding: 60px 0; }
+
+        .btn{
+            display:inline-flex; align-items:center; justify-content:center; gap:10px;
+            padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer;
+            transition:var(--transition); border:none; font-size:15px; font-family:'Poppins',sans-serif; text-decoration:none;
+        }
+
+        .btn-primary{ background: linear-gradient(135deg,var(--primary-color),var(--primary-light)); color:white; box-shadow:0 4px 15px rgba(26,35,126,0.2); }
+        .btn-outline{ background-color:transparent; color:var(--primary-color); border:2px solid var(--primary-color); }
+        .btn-secondary{ background: linear-gradient(135deg,var(--secondary-color),#00acc1); color:white; }
+        .btn-accent{ background: linear-gradient(135deg,var(--accent-color),#f50057); color:white; }
+
+        .card{ background:var(--card-bg); border-radius:12px; padding:18px; box-shadow:var(--shadow); }
+
+        /* Interview guide styles */
+        .guide { background: transparent; }
+        .guide-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-top:14px; }
+        .guide-card { padding:16px; border-radius:10px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid var(--border-color); box-shadow:var(--shadow); }
+        .guide-card h4 { color:var(--primary-color); margin-bottom:8px; font-size:1.05rem; }
+        .guide-card p, .guide-card li { color:var(--text-light); font-size:0.95rem; margin-bottom:8px; }
+        .guide-strong { color:var(--text-color); font-weight:700; margin-top:8px; display:block; }
+
+        .faq-list { margin-top:12px; display:grid; gap:10px; }
+        .example { background:#f7f9ff; border-radius:8px; padding:10px; border:1px dashed var(--border-color); color:var(--text-color); }
+
+        .signals { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
+        .signal { padding:8px 12px; border-radius:8px; font-weight:700; color:white; }
+        .signal.red { background:var(--error-color); }
+        .signal.green { background:var(--success-color); }
+        .signal.gold { background: linear-gradient(90deg,#ffb347,#ffcc33); color:#111; }
+
+        .copy-actions { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+        .muted { color:var(--text-light); font-size:0.95rem; }
+
+        /* Contact section */
+        .contact-section { background: linear-gradient(180deg,#ffffff,#f8fbff); border-radius:12px; padding:20px; box-shadow:var(--shadow); margin-top:18px; }
+        .contact-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+        .contact-card { display:flex; gap:12px; align-items:center; background:linear-gradient(90deg,#f7f9ff,#ffffff); padding:12px 14px; border-radius:10px; border:1px solid var(--border-color); }
+
+        .contact-card i { font-size:20px; color:var(--primary-color); }
+
+        @media (max-width:768px){
+            .guide-grid { grid-template-columns: 1fr; }
+            .contact-links { flex-direction:column; align-items:flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <header style="background:var(--card-bg); padding:14px 0; box-shadow:0 4px 12px rgba(0,0,0,0.05); position:sticky; top:0; z-index:1000;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; gap:12px; align-items:center;">
+                <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">EC</div>
+                <div>
+                    <div style="font-weight:800;color:var(--primary-color)">EXCELLENT CV</div>
+                    <div style="font-size:12px;color:var(--text-light)">Guia de Entrevistas & Modelos</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#interview-tips" style="margin-right:12px;text-decoration:none;color:var(--primary-color);font-weight:600">Dicas</a>
+                <a href="#cv-templates" style="margin-right:12px;text-decoration:none;color:var(--text-light)">Modelos</a>
+                <a href="#contact" style="text-decoration:none;color:var(--text-light)">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top:28px;">
+        <!-- Interview Tips -->
+        <section id="interview-tips" aria-labelledby="tips-title">
+            <h2 id="tips-title" style="color:var(--primary-color); margin-bottom:8px;">Dicas e Estratégias para Entrevistas</h2>
+            <p class="muted" style="margin-bottom:12px;">Coleção prática de dicas rápidas, perguntas frequentes, exemplos de respostas e checklists.</p>
+
+            <!-- Candidate Survival Guide -->
+            <div class="guide card" role="region" aria-label="Guia do candidato moderno" style="margin-top:14px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <div>
+                        <h3 style="color:var(--primary-color); margin-bottom:6px;">Guia de Sobrevivência (e Destaque) para o Candidato Moderno</h3>
+                        <p class="muted">Preparação estratégica para entrevistas focadas em potencial, pensamento crítico e ideias construtivas. O objetivo não é uma resposta perfeita — é demonstrar como você pensa.</p>
+                    </div>
+                    <div class="copy-actions">
+                        <button id="copyCandidateGuide" class="btn btn-primary" title="Copiar guia">Copiar Guia</button>
+                        <button id="downloadCandidateGuide" class="btn btn-outline" title="Baixar guia">Baixar (TXT)</button>
+                    </div>
+                </div>
+
+                <div class="guide-grid" style="margin-top:14px;">
+                    <div class="guide-card" role="article" aria-labelledby="chip-title">
+                        <h4 id="chip-title">Mude o Chip Mental</h4>
+                        <p><strong class="guide-strong">Mude a Dinâmica: De Interrogatório para Consultoria</strong></p>
+                        <p>A dica genial: trate a entrevista como uma reunião de consultoria gratuita. Faça perguntas de clarificação antes de responder para demonstrar maturidade estratégica.</p>
+                        <p class="muted"><strong>Exemplo prático:</strong> "Antes de responder, qual é o orçamento atual e que tentativas já falharam no passado?"</p>
+                    </div>
+
+                    <div class="guide-card" role="article" aria-labelledby="scar-title">
+                        <h4 id="scar-title">Abrance as Cicatrizes de Batalha</h4>
+                        <p><strong class="guide-strong">Vulnerabilidade Estratégica</strong></p>
+                        <p>Não use respostas ensaiadas. Escolha um erro real, foque 20% no que aconteceu e 80% na análise pós-mortem — o que aprendeu e como mudou.</p>
+                        <p class="muted">Isso demonstra autocrítica e capacidade de adaptação — valioso para cargos de impacto.</p>
+                    </div>
+
+                    <div class="guide-card" role="article" aria-labelledby="opinion-title">
+                        <h4 id="opinion-title">Prepare sua Opinião Impopular</h4>
+                        <p><strong class="guide-strong">Opinião Fundamentada</strong></p>
+                        <p>Tenha uma visão crítica sobre uma prática comum em sua área e apresente-a como uma análise de risco + oportunidade, não como crítica destrutiva.</p>
+                        <p class="muted">Útil para responder à pergunta do "Advogado do Diabo".</p>
+                    </div>
+
+                    <div class="guide-card" role="article" aria-labelledby="audit-title">
+                        <h4 id="audit-title">Audite a Empresa</h4>
+                        <p><strong class="guide-strong">Vá além do "Sobre Nós"</strong></p>
+                        <p>Formule uma hipótese sobre o maior desafio não dito da empresa olhando concorrentes, redes sociais e notícias. Use isso para fazer perguntas estratégicas na entrevista.</p>
+                        <p class="muted">Ex.: "Pelo que observei, parece que o desafio X está a tornar-se crítico. Como vocês estão a pensar abordar isso internamente?"</p>
+                    </div>
+
+                    <div class="guide-card" role="article" aria-labelledby="startup-title">
+                        <h4 id="startup-title">Trate sua Carreira como uma Startup</h4>
+                        <p><strong class="guide-strong">Você é o CEO da sua carreira</strong></p>
+                        <p>Tenha uma estratégia clara de P&D pessoal: mencione competências adjacentes que está a desenvolver e por quê — isso mostra proatividade.</p>
+                        <p class="muted">Ex.: "Sou de Marketing e estou aprendendo Python para colaborar com a equipe de dados."</p>
+                    </div>
+
+                    <div class="guide-card" role="article" aria-labelledby="finale-title">
+                        <h4 id="finale-title">As Perguntas Finais são o Grand Finale</h4>
+                        <p><strong class="guide-strong">Feche com força</strong></p>
+                        <p>Evite perguntas superficiais — use perguntas que demonstrem que você pensou estrategicamente sobre o papel e impacto.</p>
+                        <div class="faq-list" aria-hidden="false">
+                            <div class="example"><strong>Exemplo 1:</strong> "Qual é a única coisa que, se eu conseguir realizar nos primeiros 6 meses, faria vocês dizerem 'Contratar esta pessoa foi a melhor decisão do ano'?"</div>
+                            <div class="example"><strong>Exemplo 2:</strong> "Qual é a 'vaca sagrada' nesta empresa que talvez devesse ser questionada para alcançar o próximo nível?"</div>
+                            <div class="example"><strong>Exemplo 3:</strong> "Que lacuna de competência eu preencheria na equipa se fosse contratado?"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:14px;">
+                    <h4 style="color:var(--primary-color); margin-bottom:8px;">Resumo da Mentalidade</h4>
+                    <p class="muted">Entre não como alguém desesperado por um emprego, mas como um profissional curioso, capaz e que avalia se existe uma parceria mutuamente benéfica para construir algo grande.</p>
+
+                    <div style="margin-top:12px;">
+                        <h4 style="margin-bottom:8px; color:var(--primary-color);">Como se preparar (passos práticos)</h4>
+                        <ol style="color:var(--text-light); margin-left:16px; margin-top:8px;">
+                            <li>Liste 3 problemas reais que a empresa pode estar a enfrentar com base em pesquisa pública.</li>
+                            <li>Prepare 2 exemplos de "falhas" com análise pós-mortem (20/80).</li>
+                            <li>Defina sua "opinião impopular" e fundamente-a com dados ou observações.</li>
+                            <li>Tenha 3 perguntas finais que mostrem visão de longo prazo.</li>
+                        </ol>
+                    </div>
+
+                    <div class="signals" aria-hidden="false" style="margin-top:12px;">
+                        <div class="signal red">Sinal Vermelho</div>
+                        <div style="flex:1; color:var(--text-light)">Respostas decoradas, foco em títulos, culpar terceiros, falta de curiosidade.</div>
+
+                        <div class="signal green">Sinal Verde</div>
+                        <div style="flex:1; color:var(--text-light)">Aprendizado com erros, autoconsciência, foco em valor e impacto.</div>
+
+                        <div class="signal gold">Sinal Dourado</div>
+                        <div style="flex:1; color:var(--text-light)">Conectar pontos distintos, propor estratégias claras e ideias não convencionais.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CV Templates Section (excerpt kept) -->
+        <section id="cv-templates" aria-labelledby="templates-title" style="margin-top:28px;">
+            <h2 id="templates-title" style="color:var(--primary-color); margin-bottom:8px;">CVs em Destaque</h2>
+            <p class="muted" style="margin-bottom:12px;">Modelos prontos para baixar ou visualizar.</p>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
+                <div class="card">
+                    <strong>Modern</strong>
+                    <p class="muted" style="margin-top:6px;">Design moderno com foto, resumo e habilidades em destaque.</p>
+                </div>
+                <div class="card">
+                    <strong>Minimal</strong>
+                    <p class="muted" style="margin-top:6px;">Limpo e direto — ideal para candidaturas formais.</p>
+                </div>
+                <div class="card">
+                    <strong>Creative</strong>
+                    <p class="muted" style="margin-top:6px;">Colorido e voltado para áreas criativas.</p>
+                </div>
+                <div class="card">
+                    <strong>Professional</strong>
+                    <p class="muted" style="margin-top:6px;">Corporativo, ideal para posições seniores.</p>
+                </div>
+                <div class="card">
+                    <strong>Academic</strong>
+                    <p class="muted" style="margin-top:6px;">Foco em educação e publicações.</p>
+                </div>
+                <div class="card">
+                    <strong>Functional</strong>
+                    <p class="muted" style="margin-top:6px;">Por competências, ótimo para transição de carreira.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (added) -->
+        <section id="contact" aria-labelledby="contact-title" class="contact-section">
+            <h2 id="contact-title" style="color:var(--primary-color); margin-bottom:6px;">Contactos</h2>
+            <p class="muted">Entre em contacto connosco através dos links abaixo. Ao clicar no link do grupo WhatsApp você será direcionado para o grupo público.</p>
+
+            <div class="contact-links" role="list" aria-label="Contactos e redes sociais">
+                <div class="contact-card" role="listitem">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <div>
+                        <div style="font-weight:700">Grupo WhatsApp</div>
+                        <a href="https://chat.whatsapp.com/L8Smvfmxt0pJQJNn9e889i" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color); text-decoration:none; font-weight:600;">Entrar no grupo</a>
+                    </div>
+                </div>
+
+                <div class="contact-card" role="listitem">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <div>
+                        <div style="font-weight:700">Facebook</div>
+                        <a href="https://www.facebook.com/profile.php?id=61584906020449" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color); text-decoration:none; font-weight:600;">Ver perfil</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="padding:28px 0; text-align:center; color:var(--text-light); margin-top:28px;">
+        <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <p style="margin:0;">&copy; 2025 EXCELLENT CV. Todos os direitos reservados.</p>
+
+            <!-- Gerir Cookies link added to footer -->
+            <div style="display:flex; gap:12px; align-items:center;">
+                <a href="#" id="manageCookiesFooter" style="text-decoration:none; color:var(--primary-color); font-weight:700;">Gerir Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie consent script (ensure file is at /public/assets/cookie-consent.js) -->
+    <script src="/public/assets/cookie-consent.js"></script>
+    <!-- Updated tracker snippet that respects consent (ensure file is at /public/assets/tracker-snippet.js) -->
+    <script src="/public/assets/tracker-snippet.js"></script>
+
+    <script>
+        // Footer "Gerir Cookies" link wiring.
+        // This will try multiple fallbacks to open the consent modal:
+        // 1) click the serialized banner manage button (ec-manage-btn) if present;
+        // 2) if the modal DOM exists, show it directly by setting display:flex;
+        // 3) if window.ECConsent has an exposed method later, call it (safe).
+        (function () {
+            const link = document.getElementById('manageCookiesFooter');
+            if (!link) return;
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // First try: if cookie-consent created its manage button
+                const manageBtn = document.getElementById('ec-manage-btn');
+                if (manageBtn) {
+                    manageBtn.click();
+                    return;
+                }
+
+                // Second try: show modal backdrop directly if present
+                const backdrop = document.getElementById('ec-consent-modal-backdrop');
+                if (backdrop) {
+                    // ensure modal is initialized
+                    const analyticsToggle = document.getElementById('ec-analytics-toggle');
+                    // sync toggle with current consent if possible
+                    try {
+                        if (window.ECConsent && typeof window.ECConsent.getConsent === 'function') {
+                            const c = window.ECConsent.getConsent();
+                            if (analyticsToggle && c) analyticsToggle.checked = !!c.analytics;
+                        }
+                    } catch (err) {
+                        // ignore
+                    }
+                    backdrop.style.display = 'flex';
+                    backdrop.setAttribute('aria-hidden', 'false');
+                    return;
+                }
+
+                // Third try: if API exposes an opener method (future-proof)
+                try {
+                    if (window.ECConsent && typeof window.ECConsent.openPreferences === 'function') {
+                        window.ECConsent.openPreferences();
+                        return;
+                    }
+                } catch (err) {
+                    // ignore
+                }
+
+                // Last resort: alert the user to open cookie banner in top-right (very unlikely)
+                alert('Para gerir cookies, por favor, aguarde até ao carregamento do site e tente novamente. Se o problema persistir, limpe cache e recarregue.');
+            });
+        })();
+    </script>
+
+    <script>
+        // Copy / Download candidate guide
+        const copyBtn = document.getElementById('copyCandidateGuide');
+        const downloadBtn = document.getElementById('downloadCandidateGuide');
+
+        function gatherGuideText() {
+            const title = 'Guia de Sobrevivência para o Candidato Moderno\n\n';
+            const sections = [
+                {h:'Mude o Chip Mental', t:'Trate a entrevista como consultoria. Pergunte antes de responder. Ex.: "Qual é o orçamento atual?"'},
+                {h:'Abrance as Cicatrizes de Batalha', t:'Escolha um erro real e foque 20% no evento, 80% na análise pós-mortem e aprendizado.'},
+                {h:'Prepare Opinião Impopular', t:'Tenha uma visão crítica bem fundamentada sobre sua área, apresente riscos e oportunidades.'},
+                {h:'Audite a Empresa', t:'Identifique hipóteses sobre desafios não ditos (concorrência, reclamações, notícias).'},
+                {h:'Carreira como Startup', t:'Mostre P&D pessoal: competências adjacentes e por quê você as está desenvolvendo.'},
+                {h:'Perguntas Finais Matadoras', t:'"Qual é a única coisa que, se eu realizar nos primeiros 6 meses, faria vocês dizerem: contratar foi a melhor decisão?"'}
+            ];
+            let text = title;
+            sections.forEach(s => {
+                text += s.h + '\n' + s.t + '\n\n';
+            });
+            text += 'Resumo: Entre como um profissional curioso e avalie se existe uma parceria mutuamente benéfica.\n';
+            return text;
+        }
+
+        copyBtn && copyBtn.addEventListener('click', async () => {
+            const content = gatherGuideText();
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                try {
+                    await navigator.clipboard.writeText(content);
+                    alert('Guia copiado para a área de transferência.');
+                } catch (e) {
+                    console.error(e);
+                    window.prompt('Copie o texto do guia (Ctrl+C):', content);
+                }
+            } else {
+                window.prompt('Copie o texto do guia (Ctrl+C):', content);
+            }
+        });
+
+        downloadBtn && downloadBtn.addEventListener('click', () => {
+            const content = gatherGuideText();
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'guia_candidato_moderno.txt';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
