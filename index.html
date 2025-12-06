@@ -1,393 +1,805 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EXCELLENT CV | Guia de Entrevistas & Modelos de CV</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EXCELLENT CV — Crie CVs Profissionais & Encontre Emprego</title>
+  <meta name="description" content="EXCELLENT CV — Modelo profissional para criar CVs, dicas de entrevistas, vagas em destaque e serviços de revisão de CV." />
+  <meta name="theme-color" content="#0F172A" />
 
-    <!-- Cookie consent stylesheet (ensure file is at /public/assets/cookie-consent.css) -->
-    <link rel="stylesheet" href="/public/assets/cookie-consent.css">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* Reset e configurações globais */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    /* =========================
+       RESET & ROOT VARIABLES
+       ========================= */
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg: #f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --accent:#06b6d4; /* cyan */
+      --accent-dark:#0ea5a3;
+      --primary:#0f172a; /* dark navy */
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.08);
+      --glass-shadow: 0 8px 30px rgba(2,6,23,0.06);
+      --max-width: 1200px;
+      --transition: 300ms cubic-bezier(.2,.9,.3,1);
+    }
+    html,body{height:100%;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-        :root{
-            --primary-color: #1a237e;
-            --primary-light: #283593;
-            --secondary-color: #00bcd4;
-            --accent-color: #ff4081;
-            --admin-color: #673ab7;
-            --success-color: #4CAF50;
-            --warning-color: #FF9800;
-            --error-color: #F44336;
-            --text-color: #212121;
-            --text-light: #757575;
-            --bg-color: #f5f7fa;
-            --card-bg: #ffffff;
-            --border-color: #e0e0e0;
-            --shadow: 0 8px 30px rgba(0,0,0,0.08);
-            --shadow-hover: 0 15px 35px rgba(0,0,0,0.12);
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-        }
+    /* =========================
+       LAYOUT
+       ========================= */
+    .site { max-width:var(--max-width); margin:0 auto; padding:0 20px; }
 
-        body{
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-        }
+    header.site-header{
+      position:sticky; top:10px; z-index:1200; backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+      border-radius:12px; box-shadow: var(--glass-shadow); margin:12px auto; width:calc(100% - 40px);
+    }
+    .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 22px; max-width:var(--max-width); margin:0 auto; }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand-badge{ width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; color:white; background: linear-gradient(135deg,#0f172a,var(--accent)); box-shadow:0 6px 18px rgba(6,9,23,0.12); font-family:'Poppins' }
+    .brand-name{ line-height:1; }
+    .brand-name .title{ font-weight:800; font-size:18px; color:var(--primary); }
+    .brand-name .tag{ font-size:12px; color:var(--muted) }
 
-        h1,h2,h3,h4,h5{ font-family: 'Poppins', sans-serif; font-weight: 600; line-height: 1.3; }
+    nav.main-nav{ display:flex; gap:18px; align-items:center; }
+    .nav-link{ font-size:15px; color:var(--text); padding:8px 10px; border-radius:8px; transition:var(--transition); }
+    .nav-link:hover{ background:rgba(15,23,42,0.04) }
+    .cta-btn{ background: linear-gradient(90deg,var(--accent),var(--accent-dark)); color:white; padding:10px 16px; border-radius:10px; font-weight:700; box-shadow: 0 8px 22px rgba(6,182,212,0.12); transition:transform var(--transition) }
+    .cta-btn:hover{ transform:translateY(-3px) }
 
-        .container{ width:100%; max-width:1200px; margin:0 auto; padding: 0 20px; }
+    /* Mobile */
+    .mobile-toggle{ display:none; border:none; background:none; font-size:20px; padding:6px; color:var(--text) }
 
-        section{ padding: 60px 0; }
+    /* =========================
+       HERO
+       ========================= */
+    .hero{
+      margin-top:26px;
+      display:flex; gap:40px; align-items:center; justify-content:space-between;
+      background:linear-gradient(180deg, rgba(10,14,28,0.98), rgba(26,35,69,0.96));
+      color:white; border-radius:16px; padding:48px; box-shadow: 0 20px 60px rgba(2,6,23,0.45);
+      overflow:hidden;
+    }
+    .hero-left{ flex:1; min-width:320px; }
+    .hero-title{ font-size:36px; line-height:1.05; font-weight:800; margin-bottom:12px; letter-spacing:-0.4px; }
+    .hero-sub{ color:rgba(255,255,255,0.88); font-size:16px; margin-bottom:24px; max-width:640px }
+    .hero-actions{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+    .hero-cta{ padding:14px 20px; border-radius:12px; background:linear-gradient(90deg,var(--accent),#0891b2); color:white; font-weight:700; box-shadow:0 10px 30px rgba(6,182,212,0.12) }
+    .hero-secondary{ padding:12px 16px; border-radius:12px; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.92); border:1px solid rgba(255,255,255,0.06) }
 
-        .btn{
-            display:inline-flex; align-items:center; justify-content:center; gap:10px;
-            padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer;
-            transition:var(--transition); border:none; font-size:15px; font-family:'Poppins',sans-serif; text-decoration:none;
-        }
+    .hero-stats{ display:flex; gap:18px; margin-top:22px; flex-wrap:wrap }
+    .stat{ background: rgba(255,255,255,0.06); padding:12px 16px; border-radius:10px; min-width:120px; text-align:center }
+    .stat .num{ font-weight:700; font-size:18px }
+    .stat .label{ color:rgba(255,255,255,0.8); font-size:13px }
 
-        .btn-primary{ background: linear-gradient(135deg,var(--primary-color),var(--primary-light)); color:white; box-shadow:0 4px 15px rgba(26,35,126,0.2); }
-        .btn-outline{ background-color:transparent; color:var(--primary-color); border:2px solid var(--primary-color); }
-        .btn-secondary{ background: linear-gradient(135deg,var(--secondary-color),#00acc1); color:white; }
-        .btn-accent{ background: linear-gradient(135deg,var(--accent-color),#f50057); color:white; }
+    .hero-right{ width:460px; max-width:46%; min-width:300px; display:flex; align-items:center; justify-content:center; }
+    .card-visual{ width:100%; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:14px; padding:26px; box-shadow: var(--shadow); border:1px solid rgba(255,255,255,0.04) }
+    .card-visual h4{ color:white; margin-bottom:8px }
+    .card-visual p{ color:rgba(255,255,255,0.9) }
 
-        .card{ background:var(--card-bg); border-radius:12px; padding:18px; box-shadow:var(--shadow); }
+    /* =========================
+       SECTIONS & CARDS
+       ========================= */
+    section { padding:60px 0; }
+    .section-head{ text-align:center; margin-bottom:28px }
+    .section-head h2{ font-size:28px; }
+    .section-head p{ color:var(--muted); margin-top:8px }
 
-        /* Interview guide styles */
-        .guide { background: transparent; }
-        .guide-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-top:14px; }
-        .guide-card { padding:16px; border-radius:10px; background:linear-gradient(180deg,#fff,#fbfdff); border:1px solid var(--border-color); box-shadow:var(--shadow); }
-        .guide-card h4 { color:var(--primary-color); margin-bottom:8px; font-size:1.05rem; }
-        .guide-card p, .guide-card li { color:var(--text-light); font-size:0.95rem; margin-bottom:8px; }
-        .guide-strong { color:var(--text-color); font-weight:700; margin-top:8px; display:block; }
+    .grid{ display:grid; gap:20px; }
+    .cols-3{ grid-template-columns: repeat(3,1fr); }
+    .cols-2{ grid-template-columns: repeat(2,1fr); }
+    .feature-card, .service-card, .job-card, .testimonial{
+      background:var(--card); border-radius:12px; padding:18px; box-shadow:var(--shadow);
+    }
 
-        .faq-list { margin-top:12px; display:grid; gap:10px; }
-        .example { background:#f7f9ff; border-radius:8px; padding:10px; border:1px dashed var(--border-color); color:var(--text-color); }
+    .feature-card .icon{
+      width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; color:white; margin-bottom:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent-dark));
+    }
+    .feature-card h3{ font-size:18px; margin-bottom:6px }
+    .feature-card p{ color:var(--muted); font-size:14px }
 
-        .signals { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
-        .signal { padding:8px 12px; border-radius:8px; font-weight:700; color:white; }
-        .signal.red { background:var(--error-color); }
-        .signal.green { background:var(--success-color); }
-        .signal.gold { background: linear-gradient(90deg,#ffb347,#ffcc33); color:#111; }
+    /* Services / Pricing */
+    .service-card .price{ font-size:22px; font-weight:800; color:var(--primary); margin-top:6px }
+    .service-badge{ font-size:12px; padding:6px 10px; background:rgba(6,182,212,0.12); color:var(--accent-dark); border-radius:999px; display:inline-block; margin-bottom:10px }
 
-        .copy-actions { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
-        .muted { color:var(--text-light); font-size:0.95rem; }
+    /* Jobs list */
+    .job-card{ display:flex; gap:14px; align-items:center; justify-content:space-between }
+    .job-meta{ display:flex; gap:12px; align-items:center }
+    .company-badge{ width:56px; height:56px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:700; color:white; background:linear-gradient(135deg,#111827,var(--accent)); }
+    .job-info h4{ font-size:16px; margin-bottom:4px }
+    .job-info p{ color:var(--muted); font-size:13px }
+    .apply-btn{ padding:10px 12px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#0891b2); color:white; font-weight:700 }
 
-        /* Contact section */
-        .contact-section { background: linear-gradient(180deg,#ffffff,#f8fbff); border-radius:12px; padding:20px; box-shadow:var(--shadow); margin-top:18px; }
-        .contact-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
-        .contact-card { display:flex; gap:12px; align-items:center; background:linear-gradient(90deg,#f7f9ff,#ffffff); padding:12px 14px; border-radius:10px; border:1px solid var(--border-color); }
+    /* Testimonials */
+    .testimonial{ display:flex; gap:16px; align-items:center }
+    .testimonial .avatar{ width:64px; height:64px; border-radius:999px; background:linear-gradient(135deg,#f59e0b,#ef4444); display:flex; align-items:center; justify-content:center; font-weight:700; color:white }
+    .testimonial p{ color:var(--muted); font-size:14px }
 
-        .contact-card i { font-size:20px; color:var(--primary-color); }
+    /* CONTACT */
+    .contact-form{ background:linear-gradient(180deg,#ffffff, #fbfdff); border-radius:12px; box-shadow:var(--shadow); padding:18px; }
+    .form-row{ display:flex; gap:12px; margin-bottom:12px }
+    .form-row .field{ flex:1 }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="file"], select{
+      width:100%; padding:12px 14px; border-radius:8px; border:1px solid #e6eef5; font-size:14px; background:white; outline:none; transition: box-shadow var(--transition)
+    }
+    textarea{ min-height:120px; resize:vertical }
+    .form-note{ font-size:13px; color:var(--muted) }
 
-        @media (max-width:768px){
-            .guide-grid { grid-template-columns: 1fr; }
-            .contact-links { flex-direction:column; align-items:flex-start; }
-        }
-    </style>
+    /* FAQ Accordion (styled) */
+    .faq .accordion-item{ margin-bottom:10px; overflow:hidden; border-radius:10px; border:1px solid #eef4f7 }
+    .faq .acc-head{ padding:12px 16px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:transparent }
+    .faq .acc-body{ padding:0 16px; max-height:0; overflow:hidden; transition: max-height 360ms ease, padding 300ms ease }
+    .faq .acc-head h4{ font-size:15px }
+    .faq .acc-head .chev{ transition:transform var(--transition) }
+
+    /* CTA section */
+    .cta-hero{ background: linear-gradient(90deg,#0f172a, #0b2540); color:white; padding:40px; border-radius:12px; text-align:center }
+    .cta-hero h3{ font-size:22px; margin-bottom:12px }
+    .cta-hero p{ color:rgba(255,255,255,0.88); margin-bottom:18px }
+
+    /* FOOTER */
+    footer{ padding:34px 0; color:var(--muted) }
+    .footer-inner{ display:flex; gap:20px; justify-content:space-between; align-items:flex-start; flex-wrap:wrap }
+
+    /* Utilities */
+    .small{ font-size:13px }
+    .muted{ color:var(--muted) }
+    .chip{ display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(15,23,42,0.04); font-weight:600; font-size:13px }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+    @media (max-width: 980px){
+      .hero{ flex-direction:column; padding:28px }
+      .hero-right{ width:100%; max-width:100% }
+      .cols-3{ grid-template-columns: repeat(2,1fr) }
+      .cols-2{ grid-template-columns: 1fr }
+      .header-inner{ padding:12px 16px }
+    }
+    @media (max-width: 680px){
+      .brand-name .title{ font-size:16px }
+      .mobile-toggle{ display:block }
+      nav.main-nav{ display:none }
+      .hero-title{ font-size:26px }
+      .cols-3{ grid-template-columns: 1fr }
+    }
+
+    /* small niceties */
+    .reveal { opacity:0; transform: translateY(12px); transition: opacity 520ms ease, transform 520ms ease; }
+    .reveal.active{ opacity:1; transform: translateY(0) }
+    .hidden{ display:none !important }
+  </style>
 </head>
 <body>
-    <header style="background:var(--card-bg); padding:14px 0; box-shadow:0 4px 12px rgba(0,0,0,0.05); position:sticky; top:0; z-index:1000;">
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; gap:12px; align-items:center;">
-                <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">EC</div>
-                <div>
-                    <div style="font-weight:800;color:var(--primary-color)">EXCELLENT CV</div>
-                    <div style="font-size:12px;color:var(--text-light)">Guia de Entrevistas & Modelos</div>
-                </div>
-            </div>
-            <nav>
-                <a href="#interview-tips" style="margin-right:12px;text-decoration:none;color:var(--primary-color);font-weight:600">Dicas</a>
-                <a href="#cv-templates" style="margin-right:12px;text-decoration:none;color:var(--text-light)">Modelos</a>
-                <a href="#contact" style="text-decoration:none;color:var(--text-light)">Contactos</a>
-            </nav>
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+  <header class="site-header" role="banner" aria-label="Cabeçalho principal">
+    <div class="header-inner site">
+      <div class="brand" aria-hidden="false">
+        <div class="brand-badge" aria-hidden="true">EC</div>
+        <div class="brand-name">
+          <div class="title">EXCELLENT CV</div>
+          <div class="tag">Guia de Entrevistas & Carreira</div>
         </div>
-    </header>
+      </div>
 
-    <main class="container" style="padding-top:28px;">
-        <!-- Interview Tips -->
-        <section id="interview-tips" aria-labelledby="tips-title">
-            <h2 id="tips-title" style="color:var(--primary-color); margin-bottom:8px;">Dicas e Estratégias para Entrevistas</h2>
-            <p class="muted" style="margin-bottom:12px;">Coleção prática de dicas rápidas, perguntas frequentes, exemplos de respostas e checklists.</p>
+      <!-- Desktop nav -->
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <a class="nav-link" href="#por-que">Por que um bom CV</a>
+        <a class="nav-link" href="#servicos">Serviços</a>
+        <a class="nav-link" href="#dicas">Dicas</a>
+        <a class="nav-link" href="#vagas">Curriculum</a>
+        <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        <a class="nav-link" href="#contact">Contato</a>
+        <a class="cta-btn" 
+   href="https://chat.whatsapp.com/L8Smvfmxt0pJQJNn9e889i"
+   target="_blank"
+   rel="noopener noreferrer">
+   Criar CV
+</a>
+</nav>
 
-            <!-- Candidate Survival Guide -->
-            <div class="guide card" role="region" aria-label="Guia do candidato moderno" style="margin-top:14px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
-                    <div>
-                        <h3 style="color:var(--primary-color); margin-bottom:6px;">Guia de Sobrevivência (e Destaque) para o Candidato Moderno</h3>
-                        <p class="muted">Preparação estratégica para entrevistas focadas em potencial, pensamento crítico e ideias construtivas. O objetivo não é uma resposta perfeita — é demonstrar como você pensa.</p>
-                    </div>
-                    <div class="copy-actions">
-                        <button id="copyCandidateGuide" class="btn btn-primary" title="Copiar guia">Copiar Guia</button>
-                        <button id="downloadCandidateGuide" class="btn btn-outline" title="Baixar guia">Baixar (TXT)</button>
-                    </div>
-                </div>
 
-                <div class="guide-grid" style="margin-top:14px;">
-                    <div class="guide-card" role="article" aria-labelledby="chip-title">
-                        <h4 id="chip-title">Mude o Chip Mental</h4>
-                        <p><strong class="guide-strong">Mude a Dinâmica: De Interrogatório para Consultoria</strong></p>
-                        <p>A dica genial: trate a entrevista como uma reunião de consultoria gratuita. Faça perguntas de clarificação antes de responder para demonstrar maturidade estratégica.</p>
-                        <p class="muted"><strong>Exemplo prático:</strong> "Antes de responder, qual é o orçamento atual e que tentativas já falharam no passado?"</p>
-                    </div>
+      <!-- Mobile toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu" title="Abrir menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
 
-                    <div class="guide-card" role="article" aria-labelledby="scar-title">
-                        <h4 id="scar-title">Abrance as Cicatrizes de Batalha</h4>
-                        <p><strong class="guide-strong">Vulnerabilidade Estratégica</strong></p>
-                        <p>Não use respostas ensaiadas. Escolha um erro real, foque 20% no que aconteceu e 80% na análise pós-mortem — o que aprendeu e como mudou.</p>
-                        <p class="muted">Isso demonstra autocrítica e capacidade de adaptação — valioso para cargos de impacto.</p>
-                    </div>
+    <!-- Mobile menu (hidden on desktop) -->
+    <div id="mobileMenu" class="site" style="display:none; padding:8px 20px 18px;">
+      <nav style="display:flex; flex-direction:column; gap:8px;">
+        <a class="nav-link" href="#por-que">Por que um bom CV</a>
+        <a class="nav-link" href="#servicos">Serviços</a>
+        <a class="nav-link" href="#dicas">Dicas</a>
+        <a class="nav-link" href="#vagas">Curriculum</a>
+        <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        <a class="nav-link" href="#contact">Contato</a>
+        <a class="cta-btn" href="#criar">Criar CV</a>
+      </nav>
+    </div>
+  </header>
 
-                    <div class="guide-card" role="article" aria-labelledby="opinion-title">
-                        <h4 id="opinion-title">Prepare sua Opinião Impopular</h4>
-                        <p><strong class="guide-strong">Opinião Fundamentada</strong></p>
-                        <p>Tenha uma visão crítica sobre uma prática comum em sua área e apresente-a como uma análise de risco + oportunidade, não como crítica destrutiva.</p>
-                        <p class="muted">Útil para responder à pergunta do "Advogado do Diabo".</p>
-                    </div>
+  <main>
 
-                    <div class="guide-card" role="article" aria-labelledby="audit-title">
-                        <h4 id="audit-title">Audite a Empresa</h4>
-                        <p><strong class="guide-strong">Vá além do "Sobre Nós"</strong></p>
-                        <p>Formule uma hipótese sobre o maior desafio não dito da empresa olhando concorrentes, redes sociais e notícias. Use isso para fazer perguntas estratégicas na entrevista.</p>
-                        <p class="muted">Ex.: "Pelo que observei, parece que o desafio X está a tornar-se crítico. Como vocês estão a pensar abordar isso internamente?"</p>
-                    </div>
+    <!-- =========================
+         HERO
+         ========================= -->
+    <section class="hero site" aria-labelledby="heroTitle">
+      <div class="hero-left">
+        <h1 id="heroTitle" class="hero-title reveal">Crie o seu CV perfeito — conquiste entrevistas e empregos melhores</h1>
+        <p class="hero-sub reveal">Modelos profissionais, revisão por especialistas e orientações passo-a-passo para destacar a sua carreira. Seja contratado mais rápido com um CV que realmente funciona.</p>
 
-                    <div class="guide-card" role="article" aria-labelledby="startup-title">
-                        <h4 id="startup-title">Trate sua Carreira como uma Startup</h4>
-                        <p><strong class="guide-strong">Você é o CEO da sua carreira</strong></p>
-                        <p>Tenha uma estratégia clara de P&D pessoal: mencione competências adjacentes que está a desenvolver e por quê — isso mostra proatividade.</p>
-                        <p class="muted">Ex.: "Sou de Marketing e estou aprendendo Python para colaborar com a equipe de dados."</p>
-                    </div>
-
-                    <div class="guide-card" role="article" aria-labelledby="finale-title">
-                        <h4 id="finale-title">As Perguntas Finais são o Grand Finale</h4>
-                        <p><strong class="guide-strong">Feche com força</strong></p>
-                        <p>Evite perguntas superficiais — use perguntas que demonstrem que você pensou estrategicamente sobre o papel e impacto.</p>
-                        <div class="faq-list" aria-hidden="false">
-                            <div class="example"><strong>Exemplo 1:</strong> "Qual é a única coisa que, se eu conseguir realizar nos primeiros 6 meses, faria vocês dizerem 'Contratar esta pessoa foi a melhor decisão do ano'?"</div>
-                            <div class="example"><strong>Exemplo 2:</strong> "Qual é a 'vaca sagrada' nesta empresa que talvez devesse ser questionada para alcançar o próximo nível?"</div>
-                            <div class="example"><strong>Exemplo 3:</strong> "Que lacuna de competência eu preencheria na equipa se fosse contratado?"</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top:14px;">
-                    <h4 style="color:var(--primary-color); margin-bottom:8px;">Resumo da Mentalidade</h4>
-                    <p class="muted">Entre não como alguém desesperado por um emprego, mas como um profissional curioso, capaz e que avalia se existe uma parceria mutuamente benéfica para construir algo grande.</p>
-
-                    <div style="margin-top:12px;">
-                        <h4 style="margin-bottom:8px; color:var(--primary-color);">Como se preparar (passos práticos)</h4>
-                        <ol style="color:var(--text-light); margin-left:16px; margin-top:8px;">
-                            <li>Liste 3 problemas reais que a empresa pode estar a enfrentar com base em pesquisa pública.</li>
-                            <li>Prepare 2 exemplos de "falhas" com análise pós-mortem (20/80).</li>
-                            <li>Defina sua "opinião impopular" e fundamente-a com dados ou observações.</li>
-                            <li>Tenha 3 perguntas finais que mostrem visão de longo prazo.</li>
-                        </ol>
-                    </div>
-
-                    <div class="signals" aria-hidden="false" style="margin-top:12px;">
-                        <div class="signal red">Sinal Vermelho</div>
-                        <div style="flex:1; color:var(--text-light)">Respostas decoradas, foco em títulos, culpar terceiros, falta de curiosidade.</div>
-
-                        <div class="signal green">Sinal Verde</div>
-                        <div style="flex:1; color:var(--text-light)">Aprendizado com erros, autoconsciência, foco em valor e impacto.</div>
-
-                        <div class="signal gold">Sinal Dourado</div>
-                        <div style="flex:1; color:var(--text-light)">Conectar pontos distintos, propor estratégias claras e ideias não convencionais.</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CV Templates Section (excerpt kept) -->
-        <section id="cv-templates" aria-labelledby="templates-title" style="margin-top:28px;">
-            <h2 id="templates-title" style="color:var(--primary-color); margin-bottom:8px;">CVs em Destaque</h2>
-            <p class="muted" style="margin-bottom:12px;">Modelos prontos para baixar ou visualizar.</p>
-
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;">
-                <div class="card">
-                    <strong>Modern</strong>
-                    <p class="muted" style="margin-top:6px;">Design moderno com foto, resumo e habilidades em destaque.</p>
-                </div>
-                <div class="card">
-                    <strong>Minimal</strong>
-                    <p class="muted" style="margin-top:6px;">Limpo e direto — ideal para candidaturas formais.</p>
-                </div>
-                <div class="card">
-                    <strong>Creative</strong>
-                    <p class="muted" style="margin-top:6px;">Colorido e voltado para áreas criativas.</p>
-                </div>
-                <div class="card">
-                    <strong>Professional</strong>
-                    <p class="muted" style="margin-top:6px;">Corporativo, ideal para posições seniores.</p>
-                </div>
-                <div class="card">
-                    <strong>Academic</strong>
-                    <p class="muted" style="margin-top:6px;">Foco em educação e publicações.</p>
-                </div>
-                <div class="card">
-                    <strong>Functional</strong>
-                    <p class="muted" style="margin-top:6px;">Por competências, ótimo para transição de carreira.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section (added) -->
-        <section id="contact" aria-labelledby="contact-title" class="contact-section">
-            <h2 id="contact-title" style="color:var(--primary-color); margin-bottom:6px;">Contactos</h2>
-            <p class="muted">Entre em contacto connosco através dos links abaixo. Ao clicar no link do grupo WhatsApp você será direcionado para o grupo público.</p>
-
-            <div class="contact-links" role="list" aria-label="Contactos e redes sociais">
-                <div class="contact-card" role="listitem">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    <div>
-                        <div style="font-weight:700">Grupo WhatsApp</div>
-                        <a href="https://chat.whatsapp.com/L8Smvfmxt0pJQJNn9e889i" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color); text-decoration:none; font-weight:600;">Entrar no grupo</a>
-                    </div>
-                </div>
-
-                <div class="contact-card" role="listitem">
-                    <i class="fab fa-facebook" aria-hidden="true"></i>
-                    <div>
-                        <div style="font-weight:700">Facebook</div>
-                        <a href="https://www.facebook.com/profile.php?id=61584906020449" target="_blank" rel="noopener noreferrer" style="color:var(--primary-color); text-decoration:none; font-weight:600;">Ver perfil</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer style="padding:28px 0; text-align:center; color:var(--text-light); margin-top:28px;">
-        <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-            <p style="margin:0;">&copy; 2025 EXCELLENT CV. Todos os direitos reservados.</p>
-
-            <!-- Gerir Cookies link added to footer -->
-            <div style="display:flex; gap:12px; align-items:center;">
-                <a href="#" id="manageCookiesFooter" style="text-decoration:none; color:var(--primary-color); font-weight:700;">Gerir Cookies</a>
-            </div>
+        <div class="hero-actions reveal" role="group" aria-label="Ações">
+          <a class="hero-cta" href="#criar"><i class="fa fa-file-lines" aria-hidden="true"></i>&nbsp; Criar Meu CV Agora</a>
+          <a class="hero-secondary" href="#dicas"><i class="fa fa-lightbulb" aria-hidden="true"></i>&nbsp; Ver Dicas de Entrevista</a>
         </div>
-    </footer>
 
-    <!-- Cookie consent script (ensure file is at /public/assets/cookie-consent.js) -->
-    <script src="/public/assets/cookie-consent.js"></script>
-    <!-- Updated tracker snippet that respects consent (ensure file is at /public/assets/tracker-snippet.js) -->
-    <script src="/public/assets/tracker-snippet.js"></script>
+        <div class="hero-stats reveal" aria-hidden="true" style="margin-top:18px">
+          <div class="stat"><div class="num">50k+</div><div class="label">Usuários</div></div>
+          <div class="stat"><div class="num">8k+</div><div class="label">CVs revisados</div></div>
+          <div class="stat"><div class="num">98%</div><div class="label">Satisfação</div></div>
+        </div>
+      </div>
 
-    <script>
-        // Footer "Gerir Cookies" link wiring.
-        // This will try multiple fallbacks to open the consent modal:
-        // 1) click the serialized banner manage button (ec-manage-btn) if present;
-        // 2) if the modal DOM exists, show it directly by setting display:flex;
-        // 3) if window.ECConsent has an exposed method later, call it (safe).
-        (function () {
-            const link = document.getElementById('manageCookiesFooter');
-            if (!link) return;
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
+      <div class="hero-right reveal" aria-hidden="true">
+        <div class="card-visual" role="img" aria-label="Visual do produto">
+          <h4>Pacote EXCELLENT</h4>
+          <p style="margin-bottom:12px">Modelo moderno + revisão por especialista + guia de entrevista.</p>
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+            <span class="chip">Modelo Profissional</span>
+            <span class="chip">Revisão Humana</span>
+            <span class="chip">Entrega em 48h</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                // First try: if cookie-consent created its manage button
-                const manageBtn = document.getElementById('ec-manage-btn');
-                if (manageBtn) {
-                    manageBtn.click();
-                    return;
-                }
+    <!-- =========================
+         POR QUE UM BOM CV
+         ========================= -->
+    <section id="por-que" aria-labelledby="whyTitle" class="site">
+      <div class="section-head">
+        <h2 id="whyTitle">Por que um bom CV faz a diferença?</h2>
+        <p>O seu CV é a primeira impressão — aumente as suas hipóteses com um documento claro, objetivo e orientado a resultados.</p>
+      </div>
 
-                // Second try: show modal backdrop directly if present
-                const backdrop = document.getElementById('ec-consent-modal-backdrop');
-                if (backdrop) {
-                    // ensure modal is initialized
-                    const analyticsToggle = document.getElementById('ec-analytics-toggle');
-                    // sync toggle with current consent if possible
-                    try {
-                        if (window.ECConsent && typeof window.ECConsent.getConsent === 'function') {
-                            const c = window.ECConsent.getConsent();
-                            if (analyticsToggle && c) analyticsToggle.checked = !!c.analytics;
-                        }
-                    } catch (err) {
-                        // ignore
-                    }
-                    backdrop.style.display = 'flex';
-                    backdrop.setAttribute('aria-hidden', 'false');
-                    return;
-                }
+      <div class="grid cols-3 reveal" style="align-items:stretch">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+          <h3>Apresentação Profissional</h3>
+          <p>Design limpo que facilita a leitura do recrutador e destaca as suas realizações.</p>
+        </div>
 
-                // Third try: if API exposes an opener method (future-proof)
-                try {
-                    if (window.ECConsent && typeof window.ECConsent.openPreferences === 'function') {
-                        window.ECConsent.openPreferences();
-                        return;
-                    }
-                } catch (err) {
-                    // ignore
-                }
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="icon"><i class="fa fa-chart-line" aria-hidden="true"></i></div>
+          <h3>Foco em Resultados</h3>
+          <p>Mostre impacto com métricas e resultados reais que encantam gestores de contratação.</p>
+        </div>
 
-                // Last resort: alert the user to open cookie banner in top-right (very unlikely)
-                alert('Para gerir cookies, por favor, aguarde até ao carregamento do site e tente novamente. Se o problema persistir, limpe cache e recarregue.');
-            });
-        })();
-    </script>
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="icon"><i class="fa fa-user-check" aria-hidden="true"></i></div>
+          <h3>Adequado à vaga</h3>
+          <p>Personalização para cada oportunidade, com palavras-chave certas (ATS-friendly).</p>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // Copy / Download candidate guide
-        const copyBtn = document.getElementById('copyCandidateGuide');
-        const downloadBtn = document.getElementById('downloadCandidateGuide');
+    <!-- =========================
+         SERVIÇOS / CRIAR CV
+         ========================= -->
+    <section id="servicos" class="site" aria-labelledby="servTitle">
+      <div class="section-head">
+        <h2 id="servTitle">Nossos Serviços — Criação e Revisão de CVs</h2>
+        <p>Escolha o pacote ideal: desde modelos prontos até revisão completa com consultoria de carreira.</p>
+      </div>
 
-        function gatherGuideText() {
-            const title = 'Guia de Sobrevivência para o Candidato Moderno\n\n';
-            const sections = [
-                {h:'Mude o Chip Mental', t:'Trate a entrevista como consultoria. Pergunte antes de responder. Ex.: "Qual é o orçamento atual?"'},
-                {h:'Abrance as Cicatrizes de Batalha', t:'Escolha um erro real e foque 20% no evento, 80% na análise pós-mortem e aprendizado.'},
-                {h:'Prepare Opinião Impopular', t:'Tenha uma visão crítica bem fundamentada sobre sua área, apresente riscos e oportunidades.'},
-                {h:'Audite a Empresa', t:'Identifique hipóteses sobre desafios não ditos (concorrência, reclamações, notícias).'},
-                {h:'Carreira como Startup', t:'Mostre P&D pessoal: competências adjacentes e por quê você as está desenvolvendo.'},
-                {h:'Perguntas Finais Matadoras', t:'"Qual é a única coisa que, se eu realizar nos primeiros 6 meses, faria vocês dizerem: contratar foi a melhor decisão?"'}
-            ];
-            let text = title;
-            sections.forEach(s => {
-                text += s.h + '\n' + s.t + '\n\n';
-            });
-            text += 'Resumo: Entre como um profissional curioso e avalie se existe uma parceria mutuamente benéfica.\n';
-            return text;
+      <div class="grid cols-3 reveal">
+        <!-- Basic -->
+        <div class="service-card">
+          <span class="service-badge">Básico</span>
+          <h3>Modelo Profissional</h3>
+          <p class="small muted">Template pronto e orientação para preenchimento.</p>
+          <div class="price" style="margin-top:12px"><span class="small muted">A partir de</span> <div class="service-price" style="font-size:20px;font-weight:800">Grátis</div></div>
+          <p class="small" style="margin-top:10px">Ideal para iniciar — formatação e design responsivo.</p>
+          <div style="margin-top:12px"><a class="cta-btn" href="#criar">Escolher</a></div>
+        </div>
+
+        <!-- Pro -->
+        <div class="service-card">
+          <span class="service-badge">Pro</span>
+          <h3>Revisão & Otimização</h3>
+          <p class="small muted">Revisão de conteúdo, melhoria de linguagem e otimização para ATS.</p>
+          <div class="service-price" style="margin-top:12px"> 150MZN</div>
+          <p class="small" style="margin-top:10px">Revisão humana e sugestão de pontos para entrevistas.</p>
+          <div style="margin-top:12px"><a class="cta-btn" href="#contact">Solicitar</a></div>
+        </div>
+
+        <!-- Premium -->
+        <div class="service-card">
+          <span class="service-badge">Premium</span>
+          <h3>Consultoria + Carta de Apresentação</h3>
+          <p class="small muted">Sessão com especialista, carta personalizada e revisão final.</p>
+          <div class="service-price" style="margin-top:12px">200MZN</div>
+          <p class="small" style="margin-top:10px">Melhor escolha para vagas competitivas.</p>
+          <div style="margin-top:12px"><a class="cta-btn" href="#contact">Contratar</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         DICAS (ACCORDION FAQ)
+         ========================= -->
+    <section id="dicas" class="site" aria-labelledby="tipsTitle">
+      <div class="section-head">
+        <h2 id="tipsTitle">Dicas essenciais para entrevistas</h2>
+        <p>Prepare-se com confiança: guia completo com exemplos práticos e perguntas comuns.</p>
+      </div>
+
+      <div class="faq reveal" style="max-width:900px; margin:0 auto">
+        <!-- accordion item -->
+        <div class="accordion-item">
+          <div class="acc-head" tabindex="0" aria-expanded="false">
+            <h4>Preparação antes da entrevista</h4>
+            <div class="chev"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="acc-body">
+            <div style="padding:12px 0 18px">
+              <ul style="list-style:disc;padding-left:18px;color:var(--muted)">
+                <li>Pesquise a empresa (missão, produtos e cultura).</li>
+                <li>Revise a descrição da vaga e relate experiências similares.</li>
+                <li>Pratique respostas com a técnica STAR: Situação, Tarefa, Ação, Resultado.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="acc-head" tabindex="0" aria-expanded="false">
+            <h4>Comportamento durante a entrevista</h4>
+            <div class="chev"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="acc-body">
+            <div style="padding:12px 0 18px">
+              <ul style="list-style:disc;padding-left:18px;color:var(--muted)">
+                <li>Chegue 10–15 minutos antes e vista-se adequadamente.</li>
+                <li>Mantenha postura, contato visual e fale com objetividade.</li>
+                <li>Traga perguntas inteligentes sobre a vaga e a equipa.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="acc-head" tabindex="0" aria-expanded="false">
+            <h4>Perguntas comuns e como respondê-las</h4>
+            <div class="chev"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="acc-body">
+            <div style="padding:12px 0 18px">
+              <ul style="list-style:disc;padding-left:18px;color:var(--muted)">
+                <li>“Fale sobre você” — resuma sua experiência em 2 minutos e foque resultados.</li>
+                <li>“Por que devemos contratá-lo?” — destaque diferenciais e impactos anteriores.</li>
+                <li>“Quais seus pontos fracos?” — fale de melhoria contínua e ações concretas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="acc-head" tabindex="0" aria-expanded="false">
+            <h4>Erros que eliminam candidatos</h4>
+            <div class="chev"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="acc-body">
+            <div style="padding:12px 0 18px">
+              <ul style="list-style:disc;padding-left:18px;color:var(--muted)">
+                <li>Chegar atrasado ou não conhecer a empresa.</li>
+                <li>Inventar competências ou mentir sobre experiência.</li>
+                <li>Mostrar falta de interesse ou perguntas pouco preparadas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         VAGAS EM DESTAQUE
+         ========================= -->
+    <section id="vagas" class="site" aria-labelledby="jobsTitle">
+      <div class="section-head">
+        <h2 id="jobsTitle">Valor de CV por nível</h2>
+        <p>Seleção de oportunidades com candidatura rápida. Atualizamos frequentemente.</p>
+      </div>
+
+      <div class="grid cols-2 reveal" style="align-items:stretch">
+        <!-- job 1 -->
+        <div class="job-card">
+          <div class="job-meta">
+            <div class="company-badge">EST</div>
+            <div class="job-info">
+              <h4>Candidato sem EXPERIÊNCIA</h4>
+              <p class="muted">destaque</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="apply-btn" href="#contact">120MZN</a>
+          </div>
+        </div>
+
+        <!-- job 2 -->
+        <div class="job-card">
+          <div class="job-meta">
+            <div class="company-badge">EXP</div>
+            <div class="job-info">
+              <h4>Curriculum Moderno</h4>
+              <p class="muted">destaque</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="apply-btn" href="#contact">250MZN</a>
+          </div>
+        </div>
+
+        <!-- job 3 -->
+        <div class="job-card">
+          <div class="job-meta">
+            <div class="company-badge">JÚN</div>
+            <div class="job-info">
+              <h4>Nível Júnior</h4>
+              <p class="muted">destaque</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="apply-btn" href="#contact">200MZN</a>
+          </div>
+        </div>
+
+        <!-- job 4 -->
+        <div class="job-card">
+          <div class="job-meta">
+            <div class="company-badge">SÉN</div>
+            <div class="job-info">
+              <h4>Nível Sénior</h4>
+              <p class="muted">destaque</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="apply-btn" href="#contact">500MZN</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         DEPOIMENTOS
+         ========================= -->
+    <section id="depoimentos" class="site" aria-labelledby="testTitle">
+      <div class="section-head">
+        <h2 id="testTitle">O que nossos clientes dizem</h2>
+        <p>Depoimentos reais de profissionais que conseguiram entrevistas e empregos.</p>
+      </div>
+
+      <div class="grid cols-3 reveal">
+        <div class="testimonial">
+          <div class="avatar">AM</div>
+          <div>
+            <strong>Amália M.</strong>
+            <p class="muted">"A revisão mudou completamente a minha abordagem — fui chamada para 3 entrevistas na primeira semana!"</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="avatar">JP</div>
+          <div>
+            <strong>João P.</strong>
+            <p class="muted">"O modelo profissional ajudou-me a destacar resultados — hoje trabalho na área que sempre quis."</p>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="avatar">RS</div>
+          <div>
+            <strong>Rosa S.</strong>
+            <p class="muted">"A consultoria foi objetiva e eficiente. Recomendo para quem precisa de uma transição de carreira."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         <!-- FORMULÁRIO DE CONTACTO ========================= -->
+<section id="contact" class="site" aria-labelledby="contactTitle">
+  <div class="section-head">
+    <h2 id="contactTitle">Contacte-nos / Envie seu CV</h2>
+    <p>Contacte-nos para solicitar revisão, candidatar-se a vagas ou pedir consultoria.</p>
+  </div>
+</section>
+
+<!-- BOTÃO FIXO DO WHATSAPP -->
+<a href="https://chat.whatsapp.com/L8Smvfmxt0pJQJNn9e889i" 
+   class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" />
+</a>
+
+<!-- ESTILO DO BOTÃO FIXO -->
+<style>
+  .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.2s ease;
+  }
+
+  .floating-whatsapp img {
+      width: 35px;
+      height: 35px;
+      filter: invert(1);
+  }
+
+  .floating-whatsapp:hover {
+      transform: scale(1.1);
+  }
+</style>
+
+        <!-- aside / info -->
+        <aside style="display:flex; flex-direction:column; gap:12px;">
+          <div class="contact-card feature-card">
+            <h3>Precisa de ajuda?</h3>
+            <p class="muted">Email: peresfabio06@gmail.com • Tel: +258 87 706 8808</p>
+            <p class="small muted">Atendimento: Seg–Sex 7:00–21:00</p>
+            <div style="margin-top:10px"><a class="cta-btn" href="mailto:suporte@excellentcv.example">Enviar Email</a></div>
+          </div>
+
+          <div class="feature-card">
+            <h3>Como funciona</h3>
+            <ol style="color:var(--muted); padding-left:16px; margin-top:8px">
+              <li>Envie seu CV ou escolha um modelo.</li>
+              <li>Receba revisão em 48h (ou pacote expresso).</li>
+              <li>Aplique com confiança e prepare-se para entrevistas.</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================
+         CTA FINAL
+         ========================= -->
+    <section class="site" style="margin-top:20px">
+      <div class="cta-hero reveal">
+        <h3>Pronto para transformar o seu CV?</h3>
+        <p>Crie um CV que abre portas. Tenha uma revisão especializada e destaque-se nas candidaturas.</p>
+       <div style="margin-top:12px">
+    <a class="cta-btn" 
+       href="https://chat.whatsapp.com/L8Smvfmxt0pJQJNn9e889i" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        Criar Meu CV Agora
+    </a>
+</div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="site" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <strong>EXCELLENT CV</strong>
+        <p class="small muted">Guia de Entrevistas & Carreira — Todos os direitos reservados © 2025</p>
+      </div>
+
+      <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap">
+        <a class="small muted" href="#">Termos</a>
+        <a class="small muted" href="#">Privacidade</a>
+        <a class="small muted" href="#">Contato</a>
+        <div style="margin-left:8px" aria-hidden="true"><i class="fa fa-facebook"></i>&nbsp;<i class="fa fa-linkedin"></i>&nbsp;<i class="fa fa-instagram"></i></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================
+       NOTIFICATION (floating)
+       ========================= -->
+  <div id="toast" role="status" aria-live="polite" style="position:fixed; right:18px; bottom:18px; background:#111827; color:white; padding:12px 16px; border-radius:10px; box-shadow:0 8px 30px rgba(2,6,23,0.3); transform:translateY(20px) scale(0.98); opacity:0; transition: transform 260ms ease, opacity 260ms ease; z-index:1600">Ações</div>
+
+  <!-- =========================
+       SCRIPTS (interactions)
+       ========================= -->
+  <script>
+    // ---------------------
+    // Simple helpers
+    // ---------------------
+    const $ = (sel, ctx = document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+    // ---------------------
+    // Mobile menu toggle
+    // ---------------------
+    const mobileToggle = $('#mobileToggle');
+    const mobileMenu = $('#mobileMenu');
+    mobileToggle && mobileToggle.addEventListener('click', () => {
+      const open = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = open ? 'none' : 'block';
+      mobileToggle.setAttribute('aria-expanded', String(!open));
+    });
+
+    // ---------------------
+    // Smooth reveal on scroll
+    // ---------------------
+    const reveals = $$('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if(ent.isIntersecting) ent.target.classList.add('active');
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // ---------------------
+    // FAQ Accordion
+    // ---------------------
+    const accItems = $$('.faq .accordion-item');
+    accItems.forEach(item => {
+      const head = item.querySelector('.acc-head');
+      const body = item.querySelector('.acc-body');
+      const chev = head.querySelector('.chev i');
+
+      // set accessible attributes
+      head.setAttribute('role', 'button');
+      head.setAttribute('aria-controls', 'acc-body-' + Math.random().toString(36).slice(2,8));
+      body.id = head.getAttribute('aria-controls');
+
+      const toggle = (open) => {
+        const isOpen = head.getAttribute('aria-expanded') === 'true';
+        if(open === undefined) open = !isOpen;
+
+        if(open){
+          // open
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.paddingTop = '12px';
+          head.setAttribute('aria-expanded','true');
+          chev.classList.remove('fa-plus'); chev.classList.add('fa-minus');
+        } else {
+          body.style.maxHeight = null;
+          body.style.paddingTop = '0';
+          head.setAttribute('aria-expanded','false');
+          chev.classList.remove('fa-minus'); chev.classList.add('fa-plus');
+        }
+      };
+
+      // click & keyboard
+      head.addEventListener('click', () => toggle());
+      head.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        if(e.key === 'ArrowDown') { e.preventDefault(); let next = item.nextElementSibling; if(next) next.querySelector('.acc-head').focus(); }
+        if(e.key === 'ArrowUp') { e.preventDefault(); let prev = item.previousElementSibling; if(prev) prev.querySelector('.acc-head').focus(); }
+      });
+    });
+
+    // ---------------------
+    // Contact form (demo)
+    // ---------------------
+    const contactForm = $('#contactForm');
+    const toast = document.getElementById('toast');
+    const formStatus = document.getElementById('formStatus');
+
+    function showToast(msg, time = 3200) {
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0) scale(1)';
+      setTimeout(()=> {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(18px) scale(0.98)';
+      }, time);
+    }
+
+    if(contactForm){
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Basic client-side validation
+        const name = $('#name').value.trim();
+        const email = $('#email').value.trim();
+        const service = $('#service').value;
+
+        if(!name || !email || !service){
+          formStatus.textContent = 'Por favor preencha os campos obrigatórios.';
+          showToast('Preencha os campos obrigatórios.');
+          return;
         }
 
-        copyBtn && copyBtn.addEventListener('click', async () => {
-            const content = gatherGuideText();
-            if(navigator.clipboard && navigator.clipboard.writeText) {
-                try {
-                    await navigator.clipboard.writeText(content);
-                    alert('Guia copiado para a área de transferência.');
-                } catch (e) {
-                    console.error(e);
-                    window.prompt('Copie o texto do guia (Ctrl+C):', content);
-                }
-            } else {
-                window.prompt('Copie o texto do guia (Ctrl+C):', content);
-            }
-        });
+        // File size check (demo)
+        const fileInput = $('#cv');
+        if(fileInput.files && fileInput.files[0]){
+          const f = fileInput.files[0];
+          if(f.size > 5 * 1024 * 1024){
+            formStatus.textContent = 'O ficheiro excede o limite de 5MB.';
+            showToast('O ficheiro excede o limite de 5MB.');
+            return;
+          }
+        }
 
-        downloadBtn && downloadBtn.addEventListener('click', () => {
-            const content = gatherGuideText();
-            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'guia_candidato_moderno.txt';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            URL.revokeObjectURL(url);
-        });
-    </script>
+        // Demo: simulate async submit
+        formStatus.textContent = 'Enviando...';
+        showToast('Enviando pedido...');
+        setTimeout(()=> {
+          formStatus.textContent = 'Pedido enviado! Responderemos por email.';
+          contactForm.reset();
+          showToast('Pedido enviado com sucesso!', 2600);
+        }, 1400);
+      });
+    }
+
+    // ---------------------
+    // Smooth scroll for internal links
+    // ---------------------
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if(href.length > 1){
+          const el = document.querySelector(href);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+            // close mobile menu if open
+            if(mobileMenu.style.display === 'block') { mobileMenu.style.display = 'none'; mobileToggle.setAttribute('aria-expanded','false'); }
+          }
+        }
+      });
+    });
+
+    // ---------------------
+    // Accessibility: close mobile menu on escape
+    // ---------------------
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape'){
+        if(mobileMenu.style.display === 'block'){ mobileMenu.style.display = 'none'; mobileToggle.setAttribute('aria-expanded','false'); }
+      }
+    });
+
+    // ---------------------
+    // Initial reveal (for hero)
+    // ---------------------
+    window.addEventListener('load', () => {
+      setTimeout(()=> { $$('.reveal').slice(0,4).forEach(r=> r.classList.add('active')); }, 160);
+    });
+  </script>
+
+  <!-- =========================
+       END
+       ========================= -->
 </body>
 </html>
+
